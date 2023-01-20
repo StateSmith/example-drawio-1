@@ -1,0 +1,5 @@
+# ignore gcc built file
+a.out
+
+# ignore user machine specific file
+omnisharp.json
