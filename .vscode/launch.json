@@ -18,7 +18,7 @@ git update-index --no-skip-worktree .\launch.json
             "program": "dotnet",
             "args": [
                 "exec",
-                "C:/Users/adamf/.dotnet/tools/.store/dotnet-script/1.4.0/dotnet-script/1.4.0/tools/net6.0/any/dotnet-script.dll",
+                "C:/Users/some_user/.dotnet/!!! YO DUDE !!! SEE README.MD instructions !!!/.store/dotnet-script/1.4.0/dotnet-script/1.4.0/tools/net6.0/any/dotnet-script.dll",
                 "${workspaceRoot}/src/Tutorial1Sm.csx" // you can also use "${file}" to debug active vscode file
             ],
             "logging": {"moduleLoad": false},
