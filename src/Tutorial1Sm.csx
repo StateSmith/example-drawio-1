@@ -1,7 +1,7 @@
 #!/usr/bin/env dotnet-script
 // This is a c# script file
 
-#r "nuget: StateSmith, 0.7.3-alpha" // this line specifies which version of StateSmith to use and download from c# nuget web service.
+#r "nuget: StateSmith, 0.7.4-alpha" // this line specifies which version of StateSmith to use and download from c# nuget web service.
 
 using StateSmith.Input.Expansions;
 using StateSmith.output;
@@ -13,11 +13,13 @@ using System.Runtime.InteropServices;
 
 
 ////////////// START OF C# SCRIPT PROGRAM /////////////
+var projectDir = GetThisDir() + "/../";
 var srcDirectory = GetThisDir() + "/";
 var diagramFile = $"{srcDirectory}Tutorial1Sm.drawio.svg";
 
-MyGlueFile myGlueFile = new();// good now
+MyGlueFile myGlueFile = new();
 RunnerSettings settings = new(myGlueFile, diagramFile: diagramFile, outputDirectory: srcDirectory);
+settings.filePathPrintBase = projectDir; // used for pretty printing paths
 SmRunner runner = new(settings);
 runner.Run();
 
