@@ -1,7 +1,9 @@
 #include "light.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "Display.h"
 
+static int boom3_count = 0;
 
 static const char* off_string = 
 "    _------_   \n" \
@@ -52,22 +54,22 @@ static const char* on3_string =
 "    _------_   \n" \
 "  -~^^^^^^^^~-   \n" \
 " -<<<<<^^>>>>>-   \n" \
-"-<<<<<<||>>>>>>-   \n" \
-"-<<<<<<||>>>>>>-   \n" \
-" -<<<<<|:)>>>-   \n" \
-"  -<<<<||>>>>-   \n" \
-"   -<<<||>>>-   \n" \
+"-<<<<<<{}>>>>>>-   \n" \
+"-<<<<<<{}>>>>>>-   \n" \
+" -<<<<<{}>>>-   \n" \
+"  -<<<<{}>>>>-   \n" \
+"   -<<<{}>>>-   \n" \
 "    -__||__-   \n" \
 "    |______|   \n" \
 "    <______>   \n" \
 "    <______>   \n" \
 "       \\/   \n";
 
-static const char* boom_string = 
+static const char* boom_string1 = 
 " `     ^     '   \n" \
 "                 \n" \
 "`  ! ! ! ! !   '   \n" \
-"  ! KA-BOOM! !      \n" \
+"  ! !! KA !! !      \n" \
 "   ! ! ! ! !  .    \n" \
 "                  \n" \
 "  `   `   '  '    \n" \
@@ -78,50 +80,85 @@ static const char* boom_string =
 "    <______>   \n" \
 "       \\/   \n";
 
+static const char* boom_string2 = 
+" ` ! ` ! ` ! '   \n" \
+" ! ` : : : ` !   \n" \
+"!  : . . . :  !'   \n" \
+"! :  !BOOM!  : !    \n" \
+"!  : . . . :  !'   \n" \
+" ! ` : : : ` !   \n" \
+" ` ! ` ! ` ! '   \n" \
+"                 \n" \
+"    -__||__-   \n" \
+"    |______|   \n" \
+"    <______>   \n" \
+"    <______>   \n" \
+"       \\/   \n";
+
+static const char* boom_string3 = 
+"    -__||__-   \n" \
+"    |______|   \n" \
+"    <______>   \n" \
+"    <______>   \n" \
+"       \\/   \n";
 
 
-#ifdef _MSC_VER
-static void clear_screen(void)
+static void print_bulb(const char * const bulb)
 {
-    for (size_t i = 0; i < 50; i++)
-    {
-        printf("\n");
-    }
+    Display_clear_screen();
+    Display_println(bulb);
+    Display_attribute_reset();
+    Display_cursor_up_one();
+    fflush(stdout);
 }
-#else
-static void clear_screen(void)
-{
-    system("clear");
-}
-#endif
-
 
 void light_off(void)
 {
-    clear_screen();
-    printf("%s", off_string);
+    Display_attribute_blue();
+    print_bulb(off_string);
 }
 
 void light_on1(void)
 {
-    clear_screen();
-    printf("%s", on1_string);
+    Display_attribute_cyan();
+    print_bulb(on1_string);
 }
 
 void light_on2(void)
 {
-    clear_screen();
-    printf("%s", on2_string);
+    Display_attribute_green();
+    print_bulb(on2_string);
 }
 
 void light_on3(void)
 {
-    clear_screen();
-    printf("%s", on3_string);
+    Display_attribute_yellow();
+    print_bulb(on3_string);
 }
 
-void light_boom(void)
+void light_boom1(void)
 {
-    clear_screen();
-    printf("%s", boom_string);
+    Display_attribute_yellow();
+    print_bulb(boom_string1);
+}
+
+void light_boom2(void)
+{
+    Display_attribute_red();
+    print_bulb(boom_string2);
+}
+
+void light_boom3(void)
+{
+    if (boom3_count == 0)
+    {
+        print_bulb(boom_string3);
+    }
+    else
+    {
+        Display_println("\n\n");
+        Display_cursor_up_one();
+    }
+
+    boom3_count++;
 }

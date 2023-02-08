@@ -1,13 +1,3 @@
-/*
-How to share this file when it has absolute paths in it? This is a common problem with vscode.
-You can use a workspace https://github.com/microsoft/vscode/issues/37519#issuecomment-344414444
-
-Or you can get git to keep this file, but stop tracking changes to it:
-https://stackoverflow.com/a/13631525/7331858
-git update-index --skip-worktree .\launch.json
-git update-index --no-skip-worktree .\launch.json
-*/
-
 {
     "version": "0.2.0",
     "configurations": [
@@ -15,13 +5,16 @@ git update-index --no-skip-worktree .\launch.json
             "name": "debug StateSmith code gen",
             "type": "coreclr",
             "request": "launch",
-            "program": "dotnet",
+            "program": "${env:HOME}/.dotnet/tools/dotnet-script",
             "args": [
-                "exec",
-                "C:/Users/some_user/.dotnet/!!! YO DUDE !!! SEE README.MD instructions !!!/.store/dotnet-script/1.4.0/dotnet-script/1.4.0/tools/net6.0/any/dotnet-script.dll",
                 "${workspaceRoot}/src/Tutorial1Sm.csx" // you can also use "${file}" to debug active vscode file
             ],
-            "logging": {"moduleLoad": false},
+            "windows": {
+                "program": "${env:USERPROFILE}/.dotnet/tools/dotnet-script.exe",
+            },
+            "logging": {
+                "moduleLoad": false
+            },
             "cwd": "${workspaceRoot}",
             "stopAtEntry": false
         },
@@ -44,12 +37,11 @@ git update-index --no-skip-worktree .\launch.json
                     "ignoreFailures": true
                 },
                 {
-                    "description":  "Set Disassembly Flavor to Intel",
+                    "description": "Set Disassembly Flavor to Intel",
                     "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
                 }
             ]
         },
-
     ]
 }

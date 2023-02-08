@@ -12,4 +12,4 @@ $SRC/Tutorial1Sm.csx
 
 # compile code
 echo Compiling with GCC
-gcc -g -Wall -std=c11 -I $SRC $SRC/main.c $SRC/light.c $SRC/Tutorial1Sm.c
+gcc -g -Wall -std=c99 -I $SRC $SRC/main.c $SRC/light.c $SRC/Tutorial1Sm.c $SRC/Display.c

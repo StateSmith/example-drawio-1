@@ -24,12 +24,18 @@
     <ClCompile Include="..\src\Tutorial1Sm.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\Display.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\light.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="..\src\Tutorial1Sm.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Display.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
