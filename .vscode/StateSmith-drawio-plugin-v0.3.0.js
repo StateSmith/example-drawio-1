@@ -1405,8 +1405,17 @@ function StateSmith_drawio_plugin(app) {
     ssUi.addNewStateNamer();
     ssUi.addSmartDelete();
     ssUi.addUnGroupProtection();
+
+    StateSmithUiVersion.logToConsole();
 }
 
 window["Draw"].loadPlugin(StateSmith_drawio_plugin);
 
+fetch('http://localhost:8800/')
+.then(res => res.json())
+.then((data) => console.log("!!!!!!!!!!!! LOCALHOST 200 !!!!!!!!!!!!!!!!!!", data));
+
+fetch('https://dummyjson.com/products/1')
+.then(res => res.json())
+.then(json => console.log("!!!!!!!!!!!! dummyjson !!!!!!!!!!!!!!!!!!", json))
 
