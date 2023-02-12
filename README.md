@@ -1,4 +1,5 @@
-# Welcome!
+# Cross Platform Example
+Tested on Linux and Windows. Should work on mac as well.
 
 This example uses new StateSmith features that are really helpful:
 1. draw.io vscode plugin.
