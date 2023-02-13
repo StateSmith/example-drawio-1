@@ -1,3 +1,8 @@
+# Video Walk Through 🚶
+https://youtu.be/qej8pXp3dX4
+
+<br/>
+
 # Cross Platform Example
 Tested on Linux and Windows. Should work on mac as well.
 
@@ -38,14 +43,6 @@ One of the really cool features of draw.io is that the viewable svg file is also
 ![](./src/Tutorial1Sm.drawio.svg)
 
 The one downside though is that editable draw.io xml is embedded as binary in the svg. This can be tricky if you have multiple developers changing the svg on different git branches and wanting to merge the changes together. This is a common problem with some other state machine software like Matlab Simulink. You could also choose to use a regular XML `.drawio` files instead of `drawio.svg` files. This usually isn't an issue we run into at my work.
-
-<br/>
-
-# Walk Through 🚶
-I haven't had time to make a full tutorial, but you can follow the state machine design steps 
-(ignoring the use of yEd and some scripts) [here](https://github.com/StateSmith/StateSmith/blob/main/docs/quickstart1/quick-start.md#open-the-diagram).
-
-❤️ I'd love a PR that adds a new quick-start.md for this new and improved workflow.
 
 <br/>
 
