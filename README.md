@@ -1,3 +1,16 @@
+# !NOTE! Slightly outdated 📅
+Only [tutorial-2](https://github.com/StateSmith/tutorial-2) will be kept up to date with all the best practices and features. I only have so much time for documentation.
+
+The diagram is still good though for experimentation.
+
+
+<br/>
+<br/>
+<br/>
+
+---
+
+
 # Video Walk Through 🚶
 https://youtu.be/qej8pXp3dX4
 
