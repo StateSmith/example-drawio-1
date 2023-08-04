@@ -37,6 +37,10 @@ You'll also want to install the draw.io [vscode extension](https://marketplace.v
 ## Intellisense (optional) 🔍
 To get intellisense for our C# scripts, install the [official C# vscode extension](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp).
 
+> 📢 NOTE! 📢<br>
+> A recent vscode c# extension update removed omnisharp (which we need)<br>
+> It's easy to re-enable though: https://github.com/StateSmith/StateSmith/issues/221<br>
+
 You'll also need to run a few terminal commands for vscode to understand C# script files:
 
 ```
@@ -46,7 +50,7 @@ rm ./delete_me_dummy_file.csx
 
 Then restart vscode and you should be good to go!
 
-Full explanation and [details here.](https://github.com/StateSmith/StateSmith/wiki/Using-c%23-script-files-(.CSX)-instead-of-solutions-and-projects#setup-vscode-for-debugging-c-script-files-and-intellisense)
+Full explanation and [details here.](https://github.com/StateSmith/StateSmith/wiki/Using-c%23-script-files-(.CSX)-instead-of-solutions-and-projects)
 
 <br/>
 
